@@ -3,18 +3,41 @@
 	"name": "CpcdosC+",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comments"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#keyword-end"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#numerics"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.cpc",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.cpc",
+					"begin": "(?i)(rem/|//|')",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.comment.cpc"
+						}
+					},
+					"end": "$"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.cpc",
@@ -24,6 +47,64 @@
 				{
 					"name": "constant.character.escape.cpc",
 					"match": "\\\\."
+				},
+				{
+					"name": "variable.other.normal.cpc",
+					"match": "(?i)(%[a-z_][a-z0-9_\\.]+%)"
+				},
+				{
+					"name": "variable.other.normal.cpc",
+					"match": "(?i)(\\${[a-z_][a-z0-9_\\.]+})"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"match": "(?i)(function|fonction)/",
+					"captures": {
+						"1": {
+							"name": "keyword.control.cpc"
+						}
+					}
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable.other.normal.cpc",
+					"match": "(?i)(%[a-z_][a-z0-9_\\.]+%)"
+				},
+				{
+					"name": "variable.other.normal.cpc",
+					"match": "(?i)(@#[a-z_][a-z0-9_\\.]+)"
+				}
+			]
+		},
+		"keyword-end": {
+			"patterns": [{
+				"name": "keyword.control.cpc",
+				"match": "(?i)(fin/|end/)[ \\t]+(button|bouton|checkbox|if|si|function|fonction|picturebox|imagebox|progressbar|barreprogression|textblock|textebloc|textbox|textebox|window|fenetre)"
+			}]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.cpc",
+					"match": "(?i)(button|bouton|ccp|checkbox|client|close|fermer|cls|cmd|colorf|couleurc|colorb|couleurf|copy|copier|create|creer|declare|declarer|delete|supprimer|dir|rep|end|fin|exe|folder|dossier|function|fonction|goto|aller|gui|iug|help|aide|if|si|loc|pos|msgbox|message|open|ouvrir|picturebox|imagebox|ping|progressbar|barreprogression|rename|renommer|return|retour|server|serveur|set|fix|start|demarrer|stop|stopk|sys|textblock|textebloc|textbox|textebox|txt|window|fenetre|write|ecrire)/"
+				},
+				{
+					"name": "keyword.control.cpc",
+					"match": "(?i)(sinon\\:|else\\:|then\\:|alors\\:)"
+				}
+			]
+		},
+		"numerics": {
+			"patterns": [
+				{
+					"name": "constant.numeric.cpc",
+					"match": "([0-9]+)"
 				}
 			]
 		}
