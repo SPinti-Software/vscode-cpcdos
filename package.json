@@ -1,0 +1,25 @@
+{
+    "name": "vscode-cpcdos",
+    "displayName": "vscode-cpcdos",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.44.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "cpc",
+            "aliases": ["CpcdosC+", "cpc"],
+            "extensions": [".cpc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cpc",
+            "scopeName": "source.cpc",
+            "path": "./syntaxes/cpc.tmLanguage.json"
+        }]
+    }
+}
