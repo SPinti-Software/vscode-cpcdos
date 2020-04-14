@@ -1,8 +1,8 @@
 {
     "name": "vscode-cpcdos",
     "displayName": "vscode-cpcdos",
-    "description": "",
-    "version": "0.0.1",
+    "description": "CpcdosC+ language support for Visual Studio Code",
+    "version": "2.0.0",
     "repository": {
         "type" : "git",
         "url" : "https://github.com/SPinti-Software/vscode-cpcdos"
