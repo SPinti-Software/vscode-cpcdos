@@ -15,6 +15,9 @@
 			"include": "#variables"
 		},
 		{
+			"include": "#arrays"
+		},
+		{
 			"include": "#keyword-end"
 		},
 		{
@@ -22,6 +25,13 @@
 		},
 		{
 			"include": "#numerics"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"name": "constant.language.cpc",
+			"match": "\\\\#NULL"
 		}
 	],
 	"repository": {
@@ -61,12 +71,82 @@
 		"functions": {
 			"patterns": [
 				{
-					"match": "(?i)(function|fonction)/",
-					"captures": {
+					"begin": "(?i)(f[uo]nction/)[ \\t]+([a-z_][a-z0-9_\\.]*)[ \\t]*(\\()",
+					"beginCaptures": {
 						"1": {
 							"name": "keyword.control.cpc"
+						},
+						"2": {
+							"name": "entity.name.function.cpc"
+						},
+						"3": {
+							"name": "punctuation.definition.parameters.begin.cpc"
 						}
-					}
+					},
+					"end": "\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.parameters.end.cpc"
+						}
+					},
+					"name": "meta.function.cpc",
+					"patterns": [
+						{
+							"match": "[a-zA-Z_][a-zA-Z0-9_]*",
+							"name": "variable.parameter.function.cpc"
+						},
+						{
+							"match": ",",
+							"name": "punctuation.separator.arguments.cpc"
+						}
+					]
+				},
+				{
+					"begin": "(?i)(declarer?/)[ \\t]+([a-z_][a-z0-9_\\.]*)[ \\t]*(\\()",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.cpc"
+						},
+						"2": {
+							"name": "entity.name.function.cpc"
+						},
+						"3": {
+							"name": "punctuation.definition.parameters.begin.cpc"
+						}
+					},
+					"end": "(?i)(\\))(?:[ \\t]*(\\:)[ \\t]*(level|niveau)[ \\t]*(\\()([2-5])(\\)))?",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.parameters.begin.cpc"
+						},
+						"2": {
+							"name": "punctuation.definition.parameters.end.cpc"
+						},
+						"3": {
+							"name": "keyword.control.cpc"
+						},
+						"4": {
+							"name": "punctuation.definition.parameters.begin.cpc"
+						},
+						"5": {
+							"name": "constant.numeric.cpc"
+						},
+						"6": {
+							"name": "punctuation.definition.parameters.end.cpc"
+						}
+						
+					},
+					"name": "meta.function.cpc",
+					"patterns": [
+						{
+							"match": "[a-zA-Z_][a-zA-Z0-9_]*",
+							"name": "variable.parameter.function.cpc"
+						},
+						{
+							"match": ",",
+							"name": "punctuation.separator.arguments.cpc"
+						}
+					]
 				}
 			]
 		},
@@ -82,11 +162,31 @@
 				}
 			]
 		},
+		"arrays": {
+			"patterns": [
+				{
+					"match": "(?i)(fix/|set/)[ \\t]+[a-z_][a-z0-9_\\.]*[ \\t]*\\[([0-9]+)[ \\t]*(to|a)",
+					"captures": {
+						"1": {
+							"name": "keyword.control.cpc"
+						},
+						"2": {
+							"name": "constant.numeric.cpc"
+						},
+						"3": {
+							"name": "keyword.control.cpc"
+						}
+					}
+				}
+			]
+		},
 		"keyword-end": {
-			"patterns": [{
-				"name": "keyword.control.cpc",
-				"match": "(?i)(fin/|end/)[ \\t]+(button|bouton|checkbox|if|si|function|fonction|picturebox|imagebox|progressbar|barreprogression|textblock|textebloc|textbox|textebox|window|fenetre)"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.cpc",
+					"match": "(?i)(fin/|end/)[ \\t]+(button|bouton|checkbox|if|si|function|fonction|picturebox|imagebox|progressbar|barreprogression|textblock|textebloc|textbox|textebox|window|fenetre)"
+				}
+			]
 		},
 		"keywords": {
 			"patterns": [
@@ -104,9 +204,13 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.cpc",
-					"match": "([0-9]+)"
+					"match": "(?<![\\w\\d.])\\d+"
 				}
 			]
+		},
+		"operators": {
+			"match": "[!N][><~]=|[=!N~><]?=|[!N]?[><]",
+			"name": "keyword.operator.cpc"
 		}
 	},
 	"scopeName": "source.cpc"
