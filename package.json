@@ -7,7 +7,8 @@
         "vscode": "^1.44.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Snippets"
     ],
     "contributes": {
         "languages": [{
@@ -20,6 +21,12 @@
             "language": "cpc",
             "scopeName": "source.cpc",
             "path": "./syntaxes/cpc.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "cpc",
+                "path": "./snippets/snippets.json"
+            }
+        ]
     }
 }

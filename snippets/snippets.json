@@ -1,0 +1,20 @@
+{
+    "If": {
+        "prefix": "if/",
+        "body": [
+            "if/ $1 then:",
+            "$2",
+            "else:",
+            "$3",
+            "end/ if",
+            "$4"
+        ]
+    },
+    "inline if": {
+        "prefix":"if/",
+        "body": [
+            "if/ $1 then: $2 else: $3",
+            "$4"
+        ]
+    }
+}
