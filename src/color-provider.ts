@@ -1,9 +1,18 @@
 import * as vs from 'vscode';
 
 export default class ColorProvider implements vs.DocumentColorProvider {
-    
+
     provideColorPresentations(color: vs.Color, context: { document: vs.TextDocument; range: vs.Range; }, token: vs.CancellationToken): vs.ProviderResult<vs.ColorPresentation[]> {
-        throw new Error("Method not implemented.");
+        let formatColor = (num: number) => {
+            const str = (num * 255).toString();
+            return str.length >= 3 ? str : new Array(4 - str.length).join('0') + str;
+        }
+        const r = formatColor(color.red);
+        const g = formatColor(color.green);
+        const b = formatColor(color.blue);
+        return [
+            new vs.ColorPresentation(`"${r},${g},${b}"`)
+        ]
     }
 
     provideDocumentColors(document: vs.TextDocument, token: vs.CancellationToken): vs.ProviderResult<vs.ColorInformation[]> {
