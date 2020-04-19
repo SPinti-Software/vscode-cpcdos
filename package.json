@@ -5,8 +5,8 @@
     "version": "2.0.0",
     "publisher": "d0p1",
     "repository": {
-        "type" : "git",
-        "url" : "https://github.com/SPinti-Software/vscode-cpcdos"
+        "type": "git",
+        "url": "https://github.com/SPinti-Software/vscode-cpcdos"
     },
     "engines": {
         "vscode": "^1.44.0"
@@ -15,23 +15,44 @@
         "Programming Languages",
         "Snippets"
     ],
+    "main": "./out/extension.js",
+    "activationEvents": [
+        "onLanguage:cpc"
+    ],
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
     "contributes": {
-        "languages": [{
-            "id": "cpc",
-            "aliases": ["CpcdosC+", "cpc"],
-            "extensions": [".cpc"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "cpc",
-            "scopeName": "source.cpc",
-            "path": "./syntaxes/cpc.tmLanguage.json"
-        }],
+        "languages": [
+            {
+                "id": "cpc",
+                "aliases": [
+                    "CpcdosC+",
+                    "cpc"
+                ],
+                "extensions": [
+                    ".cpc"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "cpc",
+                "scopeName": "source.cpc",
+                "path": "./syntaxes/cpc.tmLanguage.json"
+            }
+        ],
         "snippets": [
             {
                 "language": "cpc",
                 "path": "./snippets/snippets.json"
             }
         ]
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.44.0",
+        "typescript": "^3.8.3"
     }
 }
