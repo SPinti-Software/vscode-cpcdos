@@ -1,4 +1,8 @@
-# Change Log
+# Changelog
+
+## [Unreleased]
+### Added
+- color picker and color preview 
 
 ## 2.0.0
 
