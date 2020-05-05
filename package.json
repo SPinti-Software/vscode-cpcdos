@@ -4,6 +4,7 @@
     "description": "CpcdosC+ language support for Visual Studio Code",
     "version": "2.0.0",
     "publisher": "d0p1",
+    "icon": "icon/logo512.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/SPinti-Software/vscode-cpcdos"
