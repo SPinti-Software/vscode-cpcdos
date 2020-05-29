@@ -1,11 +1,10 @@
 # Changelog
 
-## [Unreleased]
+## 2.1.0
 ### Added
 - color picker and color preview 
 
 ## 2.0.0
-
 - add snippets for licenses headers (`MIT/` `GPL3/` `BSD3/`)
 - add snippets for control flow (`if/`)
 - add snippets for function (`function/`)
