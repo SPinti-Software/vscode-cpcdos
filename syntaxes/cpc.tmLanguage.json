@@ -39,7 +39,7 @@
 			"patterns": [
 				{
 					"name": "comment.line.cpc",
-					"begin": "^(?i)(rem/|//|')",
+					"begin": "(?i)^\s*(rem/|//|')",
 					"beginCaptures": {
 						"1": {
 							"name": "punctuation.definition.comment.cpc"
