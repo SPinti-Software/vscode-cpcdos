@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+### Added
+- cpcdosc+ outline tree
+### Fixed
+- comment highlighting only if it is at the beginning of the line to avoid text being highlighted as a comment randomly 
+
 ## 2.1.0
 ### Added
 - color picker and color preview 
