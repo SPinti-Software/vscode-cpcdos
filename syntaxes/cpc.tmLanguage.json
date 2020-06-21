@@ -192,7 +192,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.cpc",
-					"match": "(?i)(button|bouton|ccp|checkbox|client|close|fermer|cls|cmd|colorf|couleurc|colorb|couleurf|copy|copier|create|creer|declare|declarer|delete|supprimer|dir|rep|end|fin|exe|folder|dossier|function|fonction|goto|aller|gui|iug|help|aide|if|si|loc|pos|msgbox|message|open|ouvrir|picturebox|imagebox|ping|progressbar|barreprogression|refresh|actualiser|rename|renommer|return|retour|server|serveur|set|fix|start|demarrer|stop|stopk|sys|textblock|textebloc|textbox|textebox|txt|window|fenetre|write|ecrire)/"
+					"match": "(?i)(button|bouton|ccp|checkbox|client|close|fermer|cls|cmd|colorf|couleurc|colorb|couleurf|copy|copier|create|creer|declare|declarer|delete|supprimer|dir|rep|end|fin|exe|folder|dossier|function|fonction|goto|aller|gui|iug|help|aide|if|si|loc|pos|msgbox|message|open|ouvrir|picturebox|imagebox|ping|progressbar|barreprogression|refresh|actualiser|rename|renommer|return|retour|server|serveur|set|fix|start|demarrer|stop|stopk|sys|textblock|textebloc|textbox|textebox|txt|window|fenetre|write|ecrire|download|telecharger)/"
 				},
 				{
 					"name": "keyword.control.cpc",
