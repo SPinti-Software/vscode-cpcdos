@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - cpcdosc+ outline tree
+- add snippets for compressed files (`decompress/`)
 ### Fixed
 - comment highlighting only if it is at the beginning of the line to avoid text being highlighted as a comment randomly 
 
