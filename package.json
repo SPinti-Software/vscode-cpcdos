@@ -2,7 +2,7 @@
     "name": "vscode-cpcdos",
     "displayName": "vscode-cpcdos",
     "description": "CpcdosC+ language support for Visual Studio Code",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "publisher": "d0p1",
     "icon": "icon/logo512.png",
     "repository": {
