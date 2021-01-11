@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## 2.2.0
 ### Added
 - cpcdosc+ outline tree
 - add new keywords (`decompress/`, `explorer/`)
