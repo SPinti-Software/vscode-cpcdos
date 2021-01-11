@@ -3,7 +3,7 @@
 ## [Unreleased]
 ### Added
 - cpcdosc+ outline tree
-- add new keyword (`decompress/`)
+- add new keywords (`decompress/`, `explorer/`)
 
 ### Fixed
 - add missing keyword (`download/`)
