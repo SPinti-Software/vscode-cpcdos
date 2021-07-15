@@ -38,6 +38,13 @@
                 "configuration": "./language-configuration.json"
             }
         ],
+        "iconThemes": [
+            {
+              "id": "cpcdos",
+              "label": "cpcdos",
+              "path": "./icons.json"
+            }
+        ],
         "grammars": [
             {
                 "language": "cpc",

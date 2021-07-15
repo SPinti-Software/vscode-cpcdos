@@ -1,0 +1,10 @@
+{
+    "iconDefinitions": {
+        "_cpc_source": {
+            "iconPath": "./icon/cpc_ico.svg"
+        }
+    },
+    "languageIds": {
+        "cpc": "_cpc_source"
+    }
+}
